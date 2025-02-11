@@ -1,0 +1,94 @@
+; Dos Navigator Extension configuration file
+; []  - á Alt'®¬
+; ()  - á Shift'o¬
+; {}  - ¯à®áâ® Enter
+; ~~~~~~~~~~~~~~~~~~~~~~~   Assembler	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+asm {tasm !.!}
+asm[
+   >1 ~A~ssemble only
+	tasm ! /m2
+   >1 Assemble & link ~C~OM file
+	  @echo off
+	  tasm ! /m2
+	  IF ERRORLEVEL 1 GOTO ERROR
+	  tlink /t/xi !.obj
+	  del  !.obj
+	  exit
+	  :ERROR
+	  Echo Exit with error.
+
+   >1 Assemble & link E~X~E file
+      >2  ~N~o debug info ...
+	  @echo off
+	  tasm /m2 !
+	  tlink /x !.obj
+	  del  !.obj
+      >2  With debug ~i~nfo...
+	  @echo off
+	  tasm /m2/zi !
+	  tlink /x/v !.obj
+	  del  !.obj
+
+   ]
+obj{	@echo off
+	echo ÛßßßßßßßßßßßßßßßßßßßßßßßßßßßßßÛ
+	echo Û Linking file as COM file... Û
+	echo ÛÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÜÛ
+	tlink /t/x !.obj}
+
+; ~~~~~~~~~~~~~~~~   Programming  Languages   ~~~~~~~~~~~~~~~~~~~~~~~~~
+c  {	bc !.!}
+cpp{	bc !.!}
+cpp(	bcc !.!)
+cpp[	bcc /b !.!]
+prj{	bc !.!}
+pas(	bpc !.!)
+pas[	bpc /m	!.!]
+pas{	bp !.!}
+tp (	bp /c!.!)
+tp {	bp /c!.!}
+pro{	prolog.exe !.!}
+; ~~~~~~~~~~~~~~~~~~~~~~~   Archivers	 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+lst(	arj a -jm ! !!!.!
+	del !.!)
+lst{	pkzip -ex ! @!.!
+	del !.!}
+ice{	lha x !.! *.* }
+ice(	have !.!)
+arj{	arj x !.! }
+arj(	arj f !.! )
+zip{	pkunzip -d !.!}
+zip(	pkunzip !.! e:)
+arj[   >1 Fresh archive
+       arj f !.!
+       >1 Extract whith YES
+       arj x -y !.!
+   ]
+
+; ~~~~~~~~~~~~~~~~~~~~~~~~~   FoxPro   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+mpr{	foxprol !.!}
+spr{	foxprol !.!}
+pjx{	foxprol !.!}
+prg{	foxprol !.!}
+fxp{	foxprol !.!}
+
+; ~~~~~~~~~~~~~~~~~~~~~~~~~~~~	 Misc	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+stm{	..\StMod ! F}
+bak{	del *.bak}
+sc {	paradox !.!}
+pcx{	c:\nc\bitmap !.! }
+$$${	del !.!}
+pkt{	pktview !.!}
+sch{	cap !.! }
+pcb{	cad !.! }
+UUE{	E:\SYS\UTIL\UUDECODE !.!}
+*  [   >1 Convert ~t~o UUE
+       < Enter number of lines
+       <=200
+       E:\SYS\UTIL\UUENCODE -s%3 !.!
+       >1 Convert ~f~rom UUE
+       E:\SYS\UTIL\UUDECODE !.!
+   ]
+ANS{	cls
+	TYPE !.!
+   }

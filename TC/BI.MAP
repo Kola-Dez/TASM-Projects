@@ -1,0 +1,13 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 00AD1H 00AD2H _TEXT              CODE
+ 00AD4H 00D33H 00260H _DATA              DATA
+ 00D34H 00D34H 00000H _CVTSEG            DATA
+ 00D34H 00D35H 00002H _BSS               BSS
+
+Error: Undefined symbol _ERRNO in module IOERROR
+Error: Undefined symbol __REALCVTVECTOR in module REALCVT
+Program entry point at 0000:0000
+Warning: No stack
+

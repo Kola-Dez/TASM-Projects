@@ -1,0 +1,12 @@
+default.pal  Default Color palette
+bw.pal       Default B/W   palette
+mono.pal     Default Mono  palette
+_bw.pal      VGA Default color palette for Mono VGA monitors
+_blue.pal    VGA
+_spring.pal   VGA
+norton.pal   Norton Commander
+pctools.pal  PCTools/Norton Utilities
+vax.pal      Green mode palette (Energy Star support)
+dosshell.pal Microsoft DOSSHELL
+dark.pal     Dark palette
+file_id.diz  Directory information

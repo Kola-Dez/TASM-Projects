@@ -1,0 +1,129 @@
+
+----<10-19-95 16:55:48>
+VER :1.39
+DATE:October, 4 1995
+ERR :C8
+ADDR:027C001F
+PSP :1001
+CS  :28FF
+DS  :38AB
+SS  :43CC
+SP  :1AF8
+MEMm:00035918
+MEMa:000361A0
+hOrg:5F8C0000
+hEnd:9F7F0000
+hPtr:69ED0008
+hLim:0000
+SCR :B8000000
+ษอ[þ]ออออออออออออ A:\ อออออออออออออออออปษอออออออออออออ F:\SERG\C อออออ 16:55:42 
+บ    Name    ณ    Name    ณ    Name    บบ    Name    ณ    Name    ณ    Name    
+บlistbox  bakณ            ณ            บบ..          ณekey     csmณgetch    exeฑ
+บlistbox  cppณ            ณ            บบallfiles arjณextktst  cppณhashtbl  cppฑ
+บlistbox  prjณ            ณ            บบamipasw2 c  ณextktst  exeณkey_beep c  ฑ
+บ            ณ      ษออออออออออออออออ Copy ออออออออออออออออปey c  ณkey_beep makฑ
+บ            ณ      บ                                      บey exeณlistbox  cppฑ
+บ            ณ      บ                                      บey mapณlistbox  prjฑ
+บ            ณ      บ                                      บey objณlistbox1 cppฑ
+บ            ณ      บ                                      บta cppณlookup   cppþ
+บ            ณ      บ                                      บta h  ณlookup   prjฑ
+บ            ณ      บ                                      บ   c  ณqueuetst cpp
+บฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤบ                                      บฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤบ
+บlistbox.prj       4บ                                      บ,193 06-10-92  3:10บ
+บ          No files บ                                      บ2 selected files   บ
+ศ[ A B C D E F * ]ออบ                Stop  Ü             บออออออออออออออออออฤู
+Using environment vaบ               ฿฿฿฿฿฿฿฿฿฿             บ                    
+Processing archive: ศอออออออออ Total 10,764 bytes อออออออออผ                    
+Archive created: 1995-10-11 10:57:54, modified: 1995-10-11 10:57:54             
+Extracting TOWER.ALL      OK                                                    
+    1 file(s)                                                                   
+F:\>sq get dlgds411.arj 18 crash                                                
+SYS3088: The name SQ is not recognized as an internal                           
+or external command, an operable program, or a batch file.                      
+[F:\SERG\C]                                                                     
+
+----<28-09-96 18:55:37>
+VER :1.42
+DATE:January, 22 1996
+ERR :CB
+ADDR:186C137C
+PSP :20D6
+CS  :2250
+DS  :4BC8
+SS  :5734
+SP  :3128
+MEMm:00000020
+MEMa:000001B0
+hOrg:73F40000
+hEnd:9F7F0000
+hPtr:9F7E0000
+hLim:0000
+SCR :B8000000
+ษอ[þ]อออ ZIP:D:EMXSRCD2.ZIP\EMX อออออออปษออออออออออออออออ F:\ ออออออออ 18:55:36 
+บ    Name    ณ    Name    ณ    Name    บ    Name    ณ    Name    ณ    Name    บ
+บ..          ณ            ณ            ฑบBORIS       ณ            ณ            บ
+บSRC         ณ            ณ            ฑบSEDOV       ณ            ณ            บ
+บ            ณ            ณ            ฑบSERG        ณ            ณ            บ
+บ            ณ            ณ            ฑบSID         ณ            ณ            บ
+บ            ณ            ณ            ฑบSIMDATA     ณ            ณ            บ
+บ            ณ            ณ            ฑบTMP         ณ            ณ            บ
+บ            ณ            ณ            ฑบsound       ณ            ณ            บ
+บ            ณ            ณ            þบ            ณ            ณ            บ
+บ            ณ            ณ            บ            ณ            ณ            บ
+บฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤบบ            ณ            ณ            บ
+บSRC           <SUB-DIR>  2-01-93 15:18บบฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤบ
+บPacked:  0             Ratio: 100%    บบBORIS         <SUB-DIR> 28-09-96 11:23บ
+บ          No files selected           บบ          No files selected           บ
+ศ[ A B C D E F G H I L * ]อออออออออออออผศ[ A B C D E F G H I L * ]ออออออออออออฤู
+                                                                                
+þ 80486 CPU detected.                                                           
+þ EMS version 4.00 detected.                                                    
+þ XMS version 2.00 detected.                                                    
+þ DPMI version 0.95 detected.                                                   
+                                                                                
+Searching ZIP: D:/MODEM/FILEECHO/PASSTHRU/EMXVIEW.ZIP                           
+  Inflating: emxlib.inf                                                         
+D:\MODEM\FILEECHO\PASSTHRU>                                                     
+
+----<28-11-96 12:00:39>
+VER :1.49 Gamma 015
+DATE:May 25, 1996
+ERR :CC
+ADDR:265D1C45
+PSP :20D6
+CS  :2250
+DS  :4E89
+SS  :5A09
+SP  :3DE8
+MEMm:0001FC20
+MEMa:00026270
+hOrg:76C90000
+hEnd:9F7F0000
+hPtr:7FBD0000
+hLim:0000
+SCR :B8000000
+ษอ[þ]อออออออออออ E:\TMP อออออออออออออออปษอออออ D:\MODEM\FILEECHO\SPB_F 12:00:36 
+บ    Name    ณ   Size   ณ  Date  ณ Timeบบ    Name    ณ    Name    ณ    Name    
+บ..          ณ <UP--DIR>ณ27-11-96ณ18:05บบrmbbs    arjณ            ณ            ฑ
+บOS2         ณ <SUB-DIR>ณ24-09-96ณ18:49บบ            ณ            ณ            ฑ
+บ40       allณ   311,098ณ 8-11-96ณ21:49บบ            ณ            ณ            ฑ
+บabcfiles allณ   152,194ณ26-11-96ณ 2:41บบ            ณ            ณ            ฑ
+บaeroflot allณ 1,314,319ณ29-10-96ณ23:41บบ            ณ            ณ            ฑ
+บamd-lst  allณ       723ณ31-10-96ณ23:40บบ            ณ            ณ            ฑ
+บami-lst  allณ   183,369ณ17-11-96ณ22:01บบ            ณ            ณ            ฑ
+บblood    allณ   244,524ณ12-11-96ณ20:50บบ            ณ            ณ            ฑ
+บbullbear allณ   203,090ณ11-11-96ณ20:01บบ            ณ            ณ            þ
+บcalm     allณ   233,115ณ26-11-96ณ 0:01บบ            ณ            ณ            
+บฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤมฤฤฤฤฤบบฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤมฤฤฤฤฤฤฤฤฤฤฤฤบ
+บOS2           <SUB-DIR> 24-09-96 18:49บบrmbbs.arj        12,741 14-10-96  1:54บ
+บ          No files selected           บบ          No files selected           บ
+ศ[ A B C D E F G H I L * ]อออออออออออออผศ[ A B C D E F G H I L * ]ออออออออออออฤู
+                                                                                
+                           Technical Support Board                              
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+                                                                                
+D:\MODEM\FILEECHO\SPB_FLST>                                                     

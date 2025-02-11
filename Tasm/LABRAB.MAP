@@ -1,0 +1,12 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 000FFH 00100H STACK1             
+ 00100H 00155H 00056H DATA               
+ 00160H 00406H 002A7H CODE               
+ 00410H 00420H 00011H DRAWCODE           
+ 00430H 00627H 001F8H IOCODE             
+
+Program entry point at 0016:0000
+Warning: no stack
+

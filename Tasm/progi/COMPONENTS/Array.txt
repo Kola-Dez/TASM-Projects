@@ -1,0 +1,73 @@
+include IO.ASM
+
+stack1 segment 
+    db 256 dup(?)
+stack1 ends
+
+data segment 
+    C dw 16 dup(?)
+    text1 db 'Enter massive: $'
+    text2 db 'Array: $'
+    text3 db 'Result: $'
+    text4 db ' $'
+data ends
+
+code segment 
+start:
+    ASSUME SS:stack1, DS:data, CS:code
+
+    mov ax, data
+    mov DS, ax
+
+    mov ax, 0
+    mov bx, 0
+    mov dx, 0
+    mov cx, 16
+    mov si, 0
+
+    mov ah, 09h
+    lea dx, text1
+    int 21h
+
+    call input_array
+    call print_for
+
+
+
+    mov ah, 4Ch
+    int 21h
+
+input_array:
+    inint bx
+    mov C[si], bx
+    add si, 2
+    loop input_array
+    ret
+
+print_for:
+    mov si, 0
+    mov cx, 16
+
+    mov ah, 09h
+    lea dx, text1
+    int 21h
+
+    call print_array
+    ret
+
+print_array:
+    mov bx, C[si]
+    add si, 2
+    OUTINT bx
+
+    mov ah, 09h
+    lea dx, text4
+    int 21h
+
+    loop print_array
+    ret
+
+;  24. Дан массив С(16). Найти сумму элементов, которые превосходят по величине 10 и найти их количество.
+
+code ends
+end start

@@ -1,0 +1,7 @@
+ico: d:\dn\viewer.bat !.!
+gif: qpeg.bat !.!
+pcx: qpeg.bat !.!
+bmp: qpeg.bat !.!
+com: c:\nc\hiew !.!
+exe: c:\nc\hiew !.!
+jpg: qpeg.bat !.!

@@ -1,0 +1,257 @@
+
+   Global
+    ßßßßßß
+
+[!] DN is now using extended (AT) keyboard so this version is not possible
+      to run on old machines...
+
+[!] Code is optimized for 286+ CPU, so now works slightly faster, but is not
+      able to run on 8086-based computers.
+
+
+
+   New HotKeys
+    ßßßßßßßßßßß
+
+[+] 'Hotkey Overview' topic added to 'Help on Help'
+
+[*] Ctrl-K toggles descriptions in file panel.
+[*] Ctrl-Y toggles full display mode in file panel.
+[*] Alt-F11 runs Navigator Link.
+[*] Shift-F11 opens Spreadsheet.
+[*] Ctrl-F11 runs CD Player.
+[*] Alt-G in editor - 'goto line number'.
+
+[*] Quick Dirs came back in Tree Panel.
+
+
+
+   UU Decode
+    ßßßßßßßßß
+
+[+] "Recover Broken Files" option.
+[+] Can process LowNoizeUUE.
+[-] Fixed bug with decoding binary files and single-line sections.
+[-] Prefix 'table' is now processing without troubles.
+
+
+   Viewer
+    ßßßßßß
+
+[+] Possible to edit fields while viewing DBF-files (by pressing F4 on field).
+
+[-] Structure of empty database files is displayed without dropping to
+      hex-view mode.
+
+[-] Fixed bug, caused crashes while viewing files with more than 128 tab
+      characters in a row.
+
+[-] While Tracking Viewing History, file could be truncated (by another
+      process), and DN tried to achieve unexisted data beyong end-of-file,
+      displaying "dirty memory dump".
+
+
+
+   Editor
+    ßßßßßß
+
+[!] Confirmation about modifing files with Read-Only attribute is now asked.
+
+[+] "Optimal Fill" in local editor options.
+
+[*] Alt-G hotkey came back - 'goto line number'.
+
+[*] Improved speed of Vertical Block Sorting.
+
+[-] Heap memory blocks have not been allocated correctly - it caused
+      memory losses.
+
+[-] The first line of text file might have been lost while loading within
+      invalid XMS/EMS environment.
+
+[-] Fixed autowrap - DeltaX allways corresponds to Left Side.
+
+[-] AutoWrap/AutoIndent local and global setting might have been ignored.
+
+[-] The following block commands came back:
+       Mode    ³ Ctrl-B V
+       Justify ³ Ctrl-B J
+       Rigth   ³ Ctrl-B R
+       Left    ³ Ctrl-B L
+       Center  ³ Ctrl-B ‘
+    (Ctrl-B called ASCII table before)
+
+
+
+   Archives
+    ßßßßßßßß
+
+[+] Size of '..' entry indicates the total amount of bytes of all files in
+      current archive directory.
+
+[*] Speed of reading archives improved.
+
+[*] "Archiver Setup" dialog box (Options|Archives) now have displayed on its
+      title the name of archiver currently being setting up.
+
+[-] Fixed multiple-volumed ARJ archives reading.
+
+[-] Fixed bug, which caused to determine wrongfully some files as ZOO or ARC
+      archives.
+
+[-] TDRs being extracted from archive for viewing no more stay in temp dir
+      unerased.
+
+[-] Options|Archives|Current archiver setup did not work properly - it
+      was always tuning ARJ's settings, instead of "Archive Type" checkbox
+      value of "Archive Files" dialog.
+
+[-] RAR archives with dot-ended directory names (e.g. 'DN.\*.*', created
+      using 'rar a -r dn dn.' command) are now viewing OK.
+
+[-] Fixed "Swap when unpack/del/test" option in archiver setup. Now an
+      archiver can be safely called without swapping DN (but in shorter
+      memory space), and it significally improves the speed of archives
+      processing.
+
+
+
+   File Manager / Panels & Drives
+    ßßßßßßßßßßßßßßßßßßßßßßßßßßßßßß
+
+[+] "Do not kill descriptions" option added to Options|File Manager Setup
+      dialog box. It's now possible to control whenever the descritions
+      should be preserved or removed from "descript.ion"-like files, when
+      the descripted panel elements (files/directories) are removed by
+      Erase/Move operation.
+
+[+] Shift-Enter works on TEMP/List panels as well as on Find one.
+
+[*] 'All drives' option of FileFind doesn't scan CD-Drives when not
+      necessary as well as floppies.
+
+[*] The dot does not appear after directory name when dropping it to cmdline
+      by pressing Ctrl+[Shift]+Enter.
+
+[*] Directories history can be obtained also from archive/find/temp drive
+      panel.
+
+[-] "Long Descriptons" in info panel disappeared after rereading (Ctrl-L) or
+      changing "Columns Setup" (Alt-K) or "Description Mode" (Ctrl-K)
+
+[-] File manager did not operate huge numbers (>2^31) - now fixed due to
+      large drives and archives/TDRs.
+
+[-] Confirmation about launching AUTOEXEC.BAT no more asked from FileFind
+      panel.
+
+[-] DN could not operate with files, which has percent characters
+      in its names - bug in earlier versions took these characters as
+      string format specifiers.
+
+
+   Miscellaneous
+    ßßßßßßßßßßßßß
+
+[+] Long time operations (loading files for edit, scanning drive trees,
+      directory branching and sizing) can be cancelled by pressing ESC key.
+
+[+] 'Multilanguage' critical errors.
+
+[+] Advanced VM timeslicing - when it is nothing to do, and no key pressed
+      during several seconds, DN falls asleep.
+
+[+] "Autodetermine" checkbox in Make List File dialog. If this option is set
+      "on", every call to this dialog will make to determine the necessaty
+      of paths (and set "Store path names in list files" automatically).
+      Considered path names are useful only on Branch/Find/Temp-Drives,
+      instead of a similar diskdrive panel. If "Autodetermine" option is set
+      "off", the value of "Store path names" checkbox is not set
+      automatically when calling dialog, but is preserving since last call.
+
+[*] Empty field of "Temporary Directory" (Options|Configuration|System Setup)
+      is treated as a value of %TEMP% (or %TMP%) environment variable.
+
+[*] DN doesn't allocate more than 8 MB RAM for copy buffer to avoid
+      unnecessary virtual memory swapping under multitasking envoronment.
+
+[*] Branch, FileFind and Archive Viewers are now able to use
+      EMS/XMS/SwapFiles, so their file storage possibities are expanded.
+
+[*] Windows 95 doesn't try to switch windowed session to full screen
+      every time when DN examines VESA-BIOS presence on startup.
+
+[-] Improved speed of erasing files. Earlier were doing it not so fast
+      because of always trying to clear ReadOnly attribute before erasing
+      file, even if this flag was absent.
+
+[-] Value of "Options|Configuration|System Setup|Disable XMS/EMS usage"
+      checkbox have been ignored in earlier versions - now fixed.
+
+[-] Fixed calculator's "power" operation.
+
+[-] After modifying spreadsheets (WKZ) panel still left unrefreshed until
+      pressing Ctrl-R.
+
+[-] Now now DN asks to overwrite before copying (F5/F6) read-only files
+      too - bug in earlier versions overwrote them without any confirmation,
+      unlike normal files.
+
+[-] Button width in message boxes now corresponds to caption width to prevent
+      wrapping in international builds.
+
+[-] Reanimator and Environment editor windows did not answered on Ctrl-F5
+      keyboard combination (Size/Move Window command).
+
+
+[-] "!\" and "!/" extension specifiers are now parsed normally, without
+      a last character loss.
+
+[-] Answering 'Cancel' on confirmation to save modified file before
+      running external program or archive swapping, caused crash. Now fixed.
+
+[-] When the amount of available extended/expanded memory was not
+      enough to allocate overlays completly, DN halted with fatal error. Now
+      in this case it leaves overlays on disk, but uses extended/expanded
+      memory for other needs.
+
+[-] Terminal window resizing painted background with an invalid color.
+
+[-] Scrollback buffer overflow did not handled correctly and could
+      hang the system.
+
+[-] Printer Setup | Ending string value was ignored, it was always taken from
+      Initial string.
+
+[-] DN could not change the descriptions of TDR's with ReadOnly attribute,
+      which is default.
+
+
+   Navigator Link
+    ßßßßßßßßßßßßßß
+
+[!] Navigator Link allows to access remote computer by a common file panel.
+    The following features are implemented: Create/Remove directories,
+    Copy, View and Erase files.
+    Navigator Link uses its own communication protocol, developed by RIT.
+    Advantages:
+
+    - block streaming mode:
+        Navigator Link works seamlessly in server/slave mode and doesn't take
+        full CPU time during link session. Its ideology allows to work fine
+        via packet transport protocols (ipx/spx, tcp/ip) and other hardware
+        (parallel port) via FOSSIL-like interface.
+    - bi-directional mode and true full duplex:
+        Both machines linked by DN have equal rights on each other's drives,
+        and both can work with remote simultaneously.
+    - advanced errror correction:
+        Navigator Link uses double-level selective reject method, so it works
+        even on high-noise lines.
+    - real-time data compression:
+        Link allows to transfer text files and directory data twice faster
+        on the same line. The compression works more efficient than modems'
+        internal compression methods.
+
+
+
+

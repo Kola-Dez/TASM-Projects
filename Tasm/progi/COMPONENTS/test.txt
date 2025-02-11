@@ -1,0 +1,235 @@
+stack1 segment
+    db 256 dup(?)
+stack1 ends
+
+data segment
+    prompt db 'Enter text: $'
+    input_text db 255, 0, 255 dup('$') ; Буфер для ввода текста (формат для функции 0Ah)
+    debug_message db 0Ah, 0Dh, 'Debug: Input received: $'
+    found_words db 0Ah, 0Dh, 'Matching words: $'
+    newline db 0Dh, 0Ah, '$'
+data ends
+
+code segment
+start:
+    ASSUME SS:stack1, DS:data, CS:code
+
+    ; Инициализация стека
+    mov ax, stack1
+    mov ss, ax
+    mov sp, 256
+
+    ; Инициализация сегмента данных
+    mov ax, data
+    mov ds, ax
+
+    ; Вывод приглашения к вводу текста
+    mov ah, 09h
+    lea dx, prompt
+    int 21h
+
+    ; Ввод текста с проверкой
+    lea dx, input_text
+    mov ah, 0Ah
+    int 21h
+
+    ; Проверка длины введённого текста
+    mov al, input_text + 1
+    cmp al, 0
+    je no_input
+
+    ; Отладочный вывод: текст был введён
+    mov ah, 09h
+    lea dx, debug_message
+    int 21h
+
+    ; Вывод введённого текста для отладки
+    lea dx, input_text + 2
+    mov ah, 09h
+    int 21h
+    jmp end_program
+
+no_input:
+    ; Вывод сообщения, если текст не был введён
+    mov ah, 09h
+    lea dx, newline
+    int 21h
+    mov ah, 09h
+    lea dx, found_words
+    int 21h
+
+end_program:
+    mov ah, 4Ch
+    int 21h
+
+code ends
+end start
+
+
+
+
+
+include IO.ASM
+
+;-----------------STACK-----------------;
+stack1 segment
+    db 256 dup(?)
+stack1 ends
+
+;-----------------DATA-----------------;
+data segment
+    CatetA dw 0
+    CatetB dw 0
+    Gipotinuze dw 0
+    tmp dw 0
+data ends
+
+;-----------------CODE-----------------;
+code segment
+start:
+    ASSUME SS:stack1, DS:data, CS:code
+    mov ax, data
+    mov DS, ax
+
+;----------------JMP-RUN-----------------;
+    jmp run_process
+
+;-----------------MACROS-----------------;
+DrawLine MACRO x1, y1, x2, y2
+    LOCAL printPoint, EndDrawLine, StepXPos, StepDoneX, StepYPos, StepDoneY, StepY, DiagonalIF, SkipCheck
+        mov ax, x1
+        mov bx, y1
+        mov cx, x2
+        mov dx, y2
+
+        ; Вычисление изменений по осям
+        sub cx, ax    ; cx = x2 - x1 (dx)
+        sub dx, bx    ; dx = y2 - y1 (dy)
+        ; Определение направления шага по осям
+        mov si, cx ; (dx)
+        mov di, dx ; (dy)
+
+        ; Определение знаков (положительный или отрицательный)
+
+        ;         x1 y1   x2  y2
+        ;DrawLine 0, 20, 100, 20
+            
+        mov cx, x1
+        mov dx, x2
+        mov ax, 0
+        cmp cx, dx
+        cmp cx, dx
+        je StepDoneX
+
+        cmp si, 0
+        jge StepXPos
+        neg si
+        mov ax, -1
+        jmp StepDoneX
+    StepXPos:
+        mov ax, 1
+    StepDoneX:
+
+        mov cx, y1
+        mov dx, y2
+        mov bx, 0
+        cmp cx, dx
+        je StepDoneY
+
+        cmp di, 0
+        jge StepYPos
+        neg di
+        mov bx, -1
+        jmp StepDoneY
+    StepYPos:
+        mov bx, 1
+    StepDoneY:
+        
+        ; Создание направлений
+        mov si, ax ; x
+        mov di, bx ; y
+
+        mov cx, x1            ; Начальная координата X
+        mov dx, y1            ; Начальная координата Y
+
+    
+
+    printPoint:
+        call printScreen       ; Рисуем точку
+        add cx, si             ; Увеличиваем координату x
+        add dx, di             ; Увеличиваем координату y
+
+        cmp si, di
+        je DiagonalIF
+        ; Проверка условия: if (cx > x2 && dx == y2)
+        cmp cx, x2
+        je and
+        jmp printPoint
+    and:
+        cmp dx, y2
+        je EndDrawLine
+        jmp printPoint
+    DiagonalIF:
+        ; Проверка условия: if (cx > x2 && dx == y2)
+        cmp cx, x2             ; Сравниваем cx с x2
+        jle SkipCheck          ; Если cx <= x2, пропускаем проверку dx
+        cmp dx, y2             ; Сравниваем dx с y2
+        jne SkipCheck          ; Если dx != y2, пропускаем
+        jmp EndDrawLine        ; Условие выполнено, завершить линию
+    SkipCheck:
+            jmp printPoint         ; Переход на следующую итерацию
+    EndDrawLine:
+
+ENDM
+
+
+;--------------------RUNPROGRAMM-----------------;
+run_process:
+
+    call OpenScreen
+
+    jmp exit_code
+;---------------------WINDOW----------------------;
+OpenScreen:
+    ; Выбор прерывания для графического режима
+    mov ah, 00h
+    mov al, 13h ; Выбор разрешения: 320x200, 16-цветная графика (MCGA, VGA)
+    int 10h
+    ;        x1 y1   x2  y2
+    DrawLine 0, 20, 100, 20
+    ;DrawLine 20, 20, 40, 60
+    DrawLine 20, 0, 20, 80
+
+
+    MOV AH, 08h ; Ввод символа с клавиатуры без отображения на экране
+    INT 21h
+    
+    ; Переключение с графического режима в текстовый
+    mov al, 03h ; Код функции для установки текстового режима
+    mov ah, 0 ; Видеорежим
+    int 10h
+    ret
+
+printScreen:
+    mov ah, 0ch ; Настройка для рисования пикселя на экране
+    mov al, 0Eh ; AL содержит цвет, E = желтый цвет
+    mov bh, 0 ; BH содержит номер страницы
+    int 10h
+    ret
+
+;--------------------OTLADKA---------------------;
+print_enter:
+    mov ah, 02h
+    mov dl, 13
+    int 21h
+    mov dl, 10
+    int 21h
+    ret
+
+exit_code:
+    mov ah, 4Ch
+    int 21h
+
+
+code ends
+end start

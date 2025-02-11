@@ -1,0 +1,27 @@
+@echo off
+echo -----------------------START------------------------------
+set TASM_PATH=C:\TC\BIN\TASM.EXE
+set TLINK_PATH=C:\TC\BIN\TLINK.EXE
+set TCC_PATH=C:\TC\BIN\tcc.EXE
+
+set WINDOW_ASM_PATH=C:\TC\BIN\WINDOW.ASM
+set WINDOW_OBJ_PATH=C:\TC\BIN\WINDOW.OBJ
+set PROJECT_C_PATH=C:\TC\BIN\LABRAB3.C
+set PROJECT_OBJ_PATH=C:\TC\BIN\LABRAB3.OBJ
+set PROJECT_EXE_PATH=C:\TC\BIN\LABRAB3.EXE
+set CC_LIB_FOR_LINKER=C:\TC\LIB\CC.LIB
+set C1_LIB_FOR_LINKER=C:\TC\LIB\C0C.OBJ
+
+set ERRORS_PROGI_CODE=C:\TC\BIN\ERRORS.TXT
+%TCC_PATH% -c %PROJECT_C_PATH% > %ERRORS_PROGI_CODE%
+%TASM_PATH% /l %WINDOW_ASM_PATH% >> %ERRORS_PROGI_CODE%
+
+echo -----------------------TCC--------------------------------
+%TCC_PATH% -c %PROJECT_C_PATH%
+echo -----------------------TASM-------------------------------
+%TASM_PATH% /l %WINDOW_ASM_PATH%
+echo -----------------------forming-obj------------------------
+%TLINK_PATH% %STARTUP_OBJ%+%PROJECT_OBJ_PATH%+%CC_LIB_FOR_LINKER%+%C1_LIB_FOR_LINKER% >> %ERRORS_PROGI_CODE%
+%TLINK_PATH% %STARTUP_OBJ%+%PROJECT_OBJ_PATH%+%CC_LIB_FOR_LINKER%+%C1_LIB_FOR_LINKER%
+
+echo finish

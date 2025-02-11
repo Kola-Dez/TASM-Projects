@@ -1,0 +1,14 @@
+Turbo C++  Version 1.01 Copyright (c) 1990 Borland International
+c:\tc\bin\labrab3.c:
+
+	Available memory 432912
+Turbo Assembler  Version 3.0  Copyright (c) 1988, 1991 Borland International
+
+Assembling file:   C:\TC\BIN\WINDOW.ASM  to  WINDOW.OBJ
+Error messages:    None
+Warning messages:  None
+Passes:            1
+Remaining memory:  470k
+
+Turbo Link  Version 3.01 Copyright (c) 1987, 1990 Borland International
+Error: Undefined symbol _MYASMFUNCTION in module C:\TC\BIN\LABRAB3.C

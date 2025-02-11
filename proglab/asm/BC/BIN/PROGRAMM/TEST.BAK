@@ -1,0 +1,12 @@
+.model Large,c
+.data
+	hellom db "hello12$"
+.code
+public test12
+test12 proc
+	mov ah, 09h
+	lea bx, hellom
+	int 21h
+        ret
+test12 endp
+end

@@ -1,0 +1,27 @@
+
+ Start  Stop   Length Name               Class
+
+ 00000H 00257H 00258H _TEXT              CODE
+ 00260H 00260H 00000H _FARDATA           FAR_DATA
+ 00260H 00260H 00000H _OVERLAY_          OVRINFO
+ 00260H 00260H 00000H _INIT_             INITDATA
+ 00260H 00260H 00000H _INITEND_          INITDATA
+ 00260H 00260H 00000H _EXIT_             EXITDATA
+ 00260H 00260H 00000H _EXITEND_          EXITDATA
+ 00260H 00260H 00000H _1STUB_            STUBSEG
+ 00260H 00339H 000DAH _DATA              DATA
+ 0033AH 0033AH 00000H _CVTSEG            DATA
+ 0033AH 0033AH 00000H _SCNSEG            DATA
+ 0033AH 0033AH 00000H _BSS               BSS
+ 0033AH 0033AH 00000H _BSSEND            ENDBSS
+ 00340H 003BFH 00080H _STACK             STACK
+
+Error: Undefined symbol __STKLEN in module C0.ASM
+Error: Undefined symbol __HEAPLEN in module C0.ASM
+Error: Undefined symbol _EXIT in module C0.ASM
+Error: Undefined symbol __EXITBUF in module C0.ASM
+Error: Undefined symbol __EXITFOPEN in module C0.ASM
+Error: Undefined symbol __EXITOPEN in module C0.ASM
+Error: Undefined symbol _PRINTF in module C:\TC\BIN\LABRAB3.C
+Program entry point at 0000:0000
+

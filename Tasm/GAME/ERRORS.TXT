@@ -1,0 +1,16 @@
+Turbo Assembler  Version 3.0  Copyright (c) 1988, 1991 Borland International
+
+Assembling file:   C:\TASM\GAME\MAIN.ASM  to  MAIN.OBJ
+Error messages:    None
+Warning messages:  None
+Passes:            1
+Remaining memory:  476k
+
+Turbo Assembler  Version 3.0  Copyright (c) 1988, 1991 Borland International
+
+Assembling file:   C:\TASM\GAME\WIN.ASM  to  WIN.OBJ
+Error messages:    None
+Warning messages:  None
+Passes:            1
+Remaining memory:  472k
+

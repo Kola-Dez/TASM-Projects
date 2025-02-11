@@ -1,0 +1,68 @@
+Turbo Assembler	 Version 3.0	    01/28/25 09:29:55	    Page 1
+C:\TC\BIN\WINDOW.ASM
+
+
+
+      1
+      2				     PUBLIC myAsmFunction
+      3				     PUBLIC _myAsmFunction
+      4
+      5	0000			     stack1 segment
+      6	0000  0100*(??)			 db 256	dup(?)
+      7	0100			     stack1 ends
+      8
+      9	0000			     data segment PUBLIC
+     10	0000  000C			 test2 dw 12
+     11	0002			     data ends
+     12
+     13
+     14	0000			     code segment PUBLIC
+     15	0000			     start:
+     16					 ASSUME	SS:stack1, DS:data, CS:code
+     17
+     18					 ; Initialize data segment
+     19	0000  B8 0000s			 mov AX, data
+     20	0003  8E D8			 mov DS, AX
+     21
+     22	0005				 _myAsmFunction	PROC
+     23	0005  B8 002A			     MOV AX, 42	   ; Возвращаем число 42
+     24	0008  C3			     RET
+     25	0009				 _myAsmFunction	ENDP
+     26
+     27	0009				 myAsmFunction PROC
+     28	0009  B8 002A			     MOV AX, 42	   ; Возвращаем число 42
+     29	000C  C3			     RET
+     30	000D				 myAsmFunction ENDP
+     31
+     32
+     33	000D  B4 4C			 mov AH, 4Ch
+     34	000F  CD 21			 int 21h
+     35	0011			     code ends
+     36				     END start
+Turbo Assembler	 Version 3.0	    01/28/25 09:29:55	    Page 2
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "01/28/25"
+??FILENAME			  Text	 "WINDOW  "
+??TIME				  Text	 "09:29:55"
+??VERSION			  Number 0300
+@CPU				  Text	 0101H
+@CURSEG				  Text	 CODE
+@FILENAME			  Text	 WINDOW
+@WORDSIZE			  Text	 2
+MYASMFUNCTION			  Near	 CODE:0009
+START				  Near	 CODE:0000
+TEST2				  Word	 DATA:0000
+_MYASMFUNCTION			  Near	 CODE:0005
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+CODE				  16  0011 Para	  Public
+DATA				  16  0002 Para	  Public
+STACK1				  16  0100 Para	  none
+

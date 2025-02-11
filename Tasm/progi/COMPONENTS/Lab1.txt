@@ -1,0 +1,41 @@
+.model small
+.stack 100h
+.data
+    a dw 5       ; Значение переменной a
+    b dw 3       ; Значение переменной b
+    result dw 0  ; Переменная для хранения результата
+
+.code
+main:
+    mov ax, @data
+    mov ds, ax
+
+    ; Вычисляем a^2
+    mov ax, [a]
+    imul ax, ax  ; ax = a * a
+
+    ; Сохраняем результат a^2 во временную переменную
+    mov cx, ax
+
+    ; Вычисляем 4ab
+    mov ax, [a]
+    imul ax, [b] ; ax = a * b
+    shl ax, 2    ; ax = 4 * a * b (сдвиг влево на 2 бита)
+
+    ; Добавляем к результату
+    add cx, ax   ; cx = a^2 + 4ab
+
+    ; Вычисляем 4b
+    mov ax, [b]
+    shl ax, 2    ; ax = 4 * b
+
+    ; Вычитаем 4b из результата
+    sub cx, ax   ; cx = a^2 + 4ab - 4b
+
+    ; Сохраняем результат
+    mov [result], cx
+
+    ; Завершаем программу
+    mov ah, 4Ch
+    int 21h
+end main

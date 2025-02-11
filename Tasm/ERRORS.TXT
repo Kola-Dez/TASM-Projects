@@ -1,0 +1,62 @@
+Turbo Assembler  Version 3.0  Copyright (c) 1988, 1991 Borland International
+
+Assembling file:   C:\TASM\MAIN.ASM  to  MAIN.OBJ
+Error messages:    None
+Warning messages:  None
+Passes:            1
+Remaining memory:  474k
+
+Turbo Assembler  Version 3.0  Copyright (c) 1988, 1991 Borland International
+
+Assembling file:   C:\TASM\WIN.ASM  to  WIN.OBJ
+**Error** C:\TASM\WIN.ASM(34) Undefined symbol: X1
+*Warning* C:\TASM\WIN.ASM(34) Argument needs type override
+**Error** C:\TASM\WIN.ASM(35) Undefined symbol: Y1
+*Warning* C:\TASM\WIN.ASM(35) Argument needs type override
+**Error** C:\TASM\WIN.ASM(36) Undefined symbol: X2
+*Warning* C:\TASM\WIN.ASM(36) Argument needs type override
+**Error** C:\TASM\WIN.ASM(37) Undefined symbol: Y2
+*Warning* C:\TASM\WIN.ASM(37) Argument needs type override
+**Error** C:\TASM\WIN.ASM(38) Undefined symbol: BLUE
+**Error** C:\TASM\WIN.ASM(39) Undefined symbol: COLOR
+**Error** C:\TASM\WIN.ASM(47) Undefined symbol: X1
+**Error** C:\TASM\WIN.ASM(48) Undefined symbol: Y1
+**Error** C:\TASM\WIN.ASM(49) Undefined symbol: X2
+**Error** C:\TASM\WIN.ASM(50) Undefined symbol: Y2
+**Error** C:\TASM\WIN.ASM(60) Undefined symbol: DEX
+**Error** C:\TASM\WIN.ASM(68) Undefined symbol: DEY
+**Error** C:\TASM\WIN.ASM(73) Undefined symbol: X1
+**Error** C:\TASM\WIN.ASM(74) Undefined symbol: X2
+**Error** C:\TASM\WIN.ASM(82) Undefined symbol: SX
+**Error** C:\TASM\WIN.ASM(86) Undefined symbol: Y1
+**Error** C:\TASM\WIN.ASM(87) Undefined symbol: Y2
+**Error** C:\TASM\WIN.ASM(95) Undefined symbol: SY
+**Error** C:\TASM\WIN.ASM(99) Undefined symbol: DEX
+**Error** C:\TASM\WIN.ASM(100) Undefined symbol: DEY
+**Error** C:\TASM\WIN.ASM(102) Undefined symbol: ERROR
+**Error** C:\TASM\WIN.ASM(106) Undefined symbol: X1
+**Error** C:\TASM\WIN.ASM(107) Undefined symbol: Y1
+**Error** C:\TASM\WIN.ASM(128) Undefined symbol: X2
+**Error** C:\TASM\WIN.ASM(131) Undefined symbol: Y2
+**Error** C:\TASM\WIN.ASM(139) Undefined symbol: SAVEDX
+**Error** C:\TASM\WIN.ASM(140) Undefined symbol: ERROR
+**Error** C:\TASM\WIN.ASM(143) Undefined symbol: TMP
+**Error** C:\TASM\WIN.ASM(144) Undefined symbol: SAVEDX
+**Error** C:\TASM\WIN.ASM(147) Undefined symbol: DEY
+**Error** C:\TASM\WIN.ASM(149) Undefined symbol: TMP
+**Error** C:\TASM\WIN.ASM(153) Undefined symbol: ERROR
+**Error** C:\TASM\WIN.ASM(154) Undefined symbol: DEY
+**Error** C:\TASM\WIN.ASM(156) Undefined symbol: ERROR
+**Error** C:\TASM\WIN.ASM(158) Undefined symbol: SX
+**Error** C:\TASM\WIN.ASM(162) Undefined symbol: DEX
+**Error** C:\TASM\WIN.ASM(163) Undefined symbol: TMP
+**Error** C:\TASM\WIN.ASM(167) Undefined symbol: ERROR
+**Error** C:\TASM\WIN.ASM(168) Undefined symbol: DEX
+**Error** C:\TASM\WIN.ASM(169) Undefined symbol: ERROR
+**Error** C:\TASM\WIN.ASM(171) Undefined symbol: SY
+**Error** C:\TASM\WIN.ASM(183) Undefined symbol: COLOR
+Error messages:    42
+Warning messages:  4
+Passes:            1
+Remaining memory:  472k
+
